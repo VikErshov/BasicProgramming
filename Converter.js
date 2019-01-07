@@ -1,0 +1,24 @@
+const getGets = (arr) => {
+    let index = 0;
+  
+    return () => {
+      const toReturn = arr[index];
+      index += 1;
+      return toReturn;
+    };
+  };
+  
+  // This is the place where you must place your test data
+  const test = [
+    '44' // This is the first line from the test.
+     // This is the second line from the test.
+  ];
+  
+  const gets = this.gets || getGets(test);
+  const print = this.print || console.log;
+  
+  // Solution of the problem. All the above code is for local testing. The test variable is with the first test case 2 + 2 = 4
+let milesPerGallon = +gets();
+let kilometersPerGallon = milesPerGallon * 1.6;
+let litresPerAHundredKm = Math.floor((4.54 / kilometersPerGallon) * 100);
+print(`${litresPerAHundredKm} litres per 100 km`);
